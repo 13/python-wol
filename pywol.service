@@ -1,0 +1,15 @@
+[Unit]
+Description=Python MQTT Wake-On-LAN Service
+After=network.target
+
+[Service]
+Type=simple
+User=ben
+WorkingDirectory=/home/ben/repo/python-wol
+ExecStart=/usr/bin/python3 /home/ben/repo/python-wol/pywol.py
+Restart=always
+RestartSec=30
+SyslogIdentifier=node-muh
+
+[Install]
+WantedBy=multi-user.target
